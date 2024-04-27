@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>change this</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="sec-center">
+      <input class="dropdown" type="checkbox" id="dropdown" name="dropdown" />
+      <label class="for-dropdown" for="dropdown"
+        >Dropdown Menu <i class="uil uil-arrow-down"></i
+      ></label>
+      <div class="section-dropdown">
+        <a href="main.html">Page 1 <i class="uil uil-arrow-right"></i></a>
+        <a href="main1.html">Page 2 <i class="uil uil-arrow-right"></i></a>
+        <a href="main2.html">Page 3 <i class="uil uil-arrow-right"></i></a>
+        <a href="main3.html">Page 4 <i class="uil uil-arrow-right"></i></a>
+        <a href="main4.html">Page 5<i class="uil uil-arrow-right"></i></a>
+        <a href="main5.html">Page 6<i class="uil uil-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="text_box">Test Text</div>
+    <image src="still_without.png" class="back">
+      <div class="moveable">
+        <div class="line" id="line_solid"></div>
+        <div class="line move" id="line_move"></div>
+        <div class="line_wrapper" id="line_wrapper1">
+          <div class="circle1" id="circle1"></div>
+        </div>
+        <div class="line_wrapper" id="line_wrapper">
+          <div class="circle" id="circle"></div>
+        </div>
+      </div>
+    </image>
+
+    <div class="wrapper">
+      <button class="button-30" role="button" onclick="button_1()" id="1">
+        edit this
+      </button>
+      <button class="button-30" role="button" onclick="button_2()" id="2">
+        edit this
+      </button>
+      <button class="button-30" role="button" onclick="button_3()" id="3">
+        edit this
+      </button>
+      <button class="button-30" role="button" onclick="button_4()" id="4">
+        edit this
+      </button>
+      <button class="button-30" role="button" onclick="button_reset()" id="4">
+        reset
+      </button>
+    </div>
+
+    <script>
+      var line_wrapper = document.getElementById("line_wrapper");
+      var circle = document.getElementById("circle");
+      var line_move = document.getElementById("line_move");
+      var circle1 = document.getElementById("circle1");
+      var line_wrapper1 = document.getElementById("line_wrapper1");
+      var state = 0;
+
+      function button_1() {
+        document.getElementById("1").style =
+          "box-shadow: #D6D6E7 0 3px 7px inset; transform: translateY(2px);";
+        document.getElementById("2").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("3").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("4").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        if (state != 1) {
+          if (state == 3 || state == 4) {
+            line_wrapper.style = "transform: translate(0,0rem);";
+            state = 1;
+            sleep(1300).then(() => {
+              circle.style.opacity = "0.5";
+              circle1.style.opacity = ".8";
+              line_move.style = "transform: translate(3.5rem,3.5rem);";
+              line_wrapper.style = "transform: translate(3.5rem,3.5rem);";
+              line_wrapper1.style = "transform: translate(3.5rem,3.5rem);";
+            });
+          } else if (state == 0 || state == 2) {
+            circle.style.opacity = "0.5";
+            circle1.style.opacity = ".8";
+            line_move.style = "transform: translate(3.5rem,3.5rem);";
+            line_wrapper.style = "transform: translate(3.5rem,3.5rem);";
+            line_wrapper1.style = "transform: translate(3.5rem,3.5rem);";
+
+            state = 1;
+          }
+        }
+      }
+
+      function button_2() {
+        document.getElementById("1").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("2").style =
+          "box-shadow: #D6D6E7 0 3px 7px inset; transform: translateY(2px);";
+        document.getElementById("3").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("4").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        if (state != 2) {
+          if (state == 3 || state == 4) {
+            line_wrapper.style = "transform: translate(0,0rem);";
+            state = 2;
+            sleep(1300).then(() => {
+              circle.style.opacity = "0.5";
+              circle1.style.opacity = ".8";
+              line_move.style = "transform: translate(-3.5rem,-3.5rem);";
+              line_wrapper.style = "transform: translate(-3.5rem,-3.5rem);";
+              line_wrapper1.style = "transform: translate(-3.5rem,-3.5rem);";
+            });
+          } else if (state == 0 || state == 1) {
+            circle.style.opacity = "0.5";
+            circle1.style.opacity = ".8";
+            line_move.style = "transform: translate(-3.5rem,-3.5rem);";
+            line_wrapper.style = "transform: translate(-3.5rem,-3.5rem);";
+            line_wrapper1.style = "transform: translate(-3.5rem,-3.5rem);";
+
+            state = 2;
+          }
+        }
+      }
+      function button_3() {
+        document.getElementById("1").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("2").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("3").style =
+          "box-shadow: #D6D6E7 0 3px 7px inset; transform: translateY(2px);";
+        document.getElementById("4").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        if (state != 3) {
+          if (state == 1 || state == 2) {
+            circle.style.opacity = "1";
+            circle1.style.opacity = "1";
+            line_move.style = "transform: translate(0em,0rem);";
+            line_wrapper.style = "transform: translate(0rem,0rem);";
+            line_wrapper1.style = "transform: translate(0rem,0rem);";
+            state = 3;
+            sleep(1300).then(() => {
+              line_wrapper.style = "transform: translate(0,-5rem);";
+            });
+          } else if (state == 0 || state == 4) {
+            line_wrapper.style = "transform: translate(0,-5rem);";
+
+            state = 3;
+          }
+        }
+      }
+      function button_4() {
+        document.getElementById("1").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("2").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("3").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("4").style =
+          "box-shadow: #D6D6E7 0 3px 7px inset; transform: translateY(2px);";
+        if (state != 4) {
+          if (state == 1 || state == 2) {
+            circle.style.opacity = "1";
+            circle1.style.opacity = "1";
+            line_move.style = "transform: translate(0em,0rem);";
+            line_wrapper.style = "transform: translate(0rem,0rem);";
+            line_wrapper1.style = "transform: translate(0rem,0rem);";
+            state = 4;
+            sleep(1300).then(() => {
+              line_wrapper.style = "transform: translate(0,5rem);";
+            });
+          } else if (state == 0 || state == 3) {
+            line_wrapper.style = "transform: translate(0,5rem);";
+
+            state = 4;
+          }
+        }
+      }
+
+      function button_reset() {
+        document.getElementById("1").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("2").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("3").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+        document.getElementById("4").style =
+          "box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; transform: translateY(0px);";
+
+        circle.style.opacity = "1";
+        circle1.style.opacity = "1";
+        line_move.style = "transform: translate(0em,0rem);";
+        line_wrapper.style = "transform: translate(0rem,0rem);";
+        line_wrapper1.style = "transform: translate(0rem,0rem);";
+        state = 0;
+      }
+
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+    </script>
+  </body>
+</html>
